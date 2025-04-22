@@ -59,3 +59,8 @@ body {
 .todo p {
     margin:0;
 }
+.completed{ 
+opacity: .4;    /* 透明度反黑 */
+text-decoration: line-through;  /* 刪除線 */
+color: red;
+}
