@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="page1">page1</div>
+  <div id="page2" style="display: none;">page2</div>
+  <div id="page3" style="display: none;">page3</div>
+
+  <button id="btn-prev" onclick="changePage(-1)">上一頁</button>
+  <button id="btn-next" onclick="changePage(1)">下一頁</button>
+
+  <script>
+    const pages = ['page1', 'page2', 'page3'];
+    let currentPage = 0;
+
+    function renderPage() {
+      pages.forEach((id, index) => {
+        document.getElementById(id).style.display = (index === currentPage) ? 'block' : 'none';
+      });
+
+      // 控制按鈕顯示
+      document.getElementById('btn-prev').style.display = (currentPage === 0) ? 'none' : 'inline-block';
+      document.getElementById('btn-next').style.display = (currentPage === pages.length - 1) ? 'none' : 'inline-block';
+    }
+
+    function changePage(direction) {
+      currentPage += direction;
+      if (currentPage < 0) currentPage = 0;
+      if (currentPage >= pages.length) currentPage = pages.length - 1;
+      renderPage();
+    }
+
+    // 初始化
+    renderPage();
+  </script>
+
+</body>
+</html>
