@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>滑鼠常見事件
+        <ul>
+            <li>click: 左鍵一下</li>
+            <li>dblclick:左鍵兩下</li>
+            <li>mousedown: 按下滑鼠時</li>
+            <li>mouseup: 放開滑鼠時</li>
+            <li style="color: red;">mouseover: 滑鼠經過時</li>
+            <li style="color: red;">mouseenter: 滑鼠進入時</li>
+            <li style="color: green;">mouseleave: 滑鼠離開時</li>
+            <li style="color: green;">mouseout: 滑鼠離開時</li>
+            <li>mousemove: 滑鼠移動時</li>
+            <li>mousewheel: 滾動滑鼠滾輪時</li>
+        </ul>
+    </h2>
+    <hr>
+    <h2>ex: 取得滑鼠位置: <span id="xy"></span></h2>
+    <img src="../../public/images/p3.jpg" alt="" width="200" id="photo1">
+    <script>
+        // //網頁中的任何一個位置
+        // document.addEventListener("mousemove", (e) => {
+        //     document.getElementById("xy").textContent = `x: ${e.clientX}, y: ${e.clientY}`;
+        // })
+
+        //取得photo1圖片內的座標 (以視窗左上角為起點)
+        let photo1 = document.getElementById("photo1");
+        // photo1.addEventListener("mousemove", (e) => {
+        //     console.log(e);
+        //     document.getElementById("xy").textContent = `mousemove: ${e.clientX}, y: ${e.clientY}`;
+        // });
+
+        //取得photo1圖片內的座標 (以視窗左上角為起點)
+        photo1.addEventListener("click", (e) => {
+            document.getElementById("xy").innerHTML = ` <br> `
+                `clienty: ${e.clientX}, clienty: ${e.clientY}`;
+            `offsetX: ${e.offsetX}, offsetY: ${e.offsetY}`;
+            `screenX: ${e.screenX}, screenY: ${e.screenY}`;
+            `pageX: ${e.pageX}, pageY: ${e.pageY}`;
+            `x: ${e.x}, y: ${e.y}`;
+        });
+        //取得photo1圖片內的座標 (以頁面左上角為起點)
+        photo1.addEventListener("mousemove", (e) => {
+            console.log(e);
+            document.getElementById("xy").textContent = `x: ${e.pageX}, y: ${e.pageY}`;
+        });
+    </script>
+
+
+
+    <img src="../../public/images/p2.jpg" alt="" width="200" id="photo2">
+    <script>
+        //取得第二張圖左鍵一下的座標(以圖片左上為起點)
+        let photo2 = document.getElementById("photo2");
+        photo2.addEventListener("click", (e) => {
+            let curX = e.clientX;
+            let curY = e.clientY;
+            document.getElementById("xy").textContent = `第二章圖典籍的座標: ${e.clientX}, y: ${e.clientY}`;
+            confirm.log(curX, curY);
+        });
+
+        //取得第二張圖左鍵一上的座標
+
+
+    </script>
+
+
+</body>
+
+</html>
