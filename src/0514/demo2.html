@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字輪播</title>
+    <link rel="stylesheet" href="./css/textslider.css">
+
+    <style>
+        #wrapper {
+            width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .slideText {
+            height: 1.3em;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>文字輪播</h1>
+        <hr>
+
+        <!-- HTML跑馬燈 -->
+        <!-- <marquee SCROLLAMOUNT=" 10 " direction="left" style="width: 300px; background-color: #3DCE94;">會動的字 
+        <img src="./images/01.jpg" alt="" width="50">
+        </marquee> -->
+        <div class="slideText">
+            <ul>
+                <li>News1</li>
+                <li>News2</li>
+                <li>News3</li>
+                <li>News4</li>
+                <li>News5</li>
+                <li>News6</li>
+                <li>News7</li>
+                <li>News8</li>
+                <li>News9</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.textslider.js"></script>
+    <script>
+        $(function () {
+            $('.slideText').textslider({
+                //捲動方向
+                // direction:'scrollUp',
+                //捲動速度
+                scrollSpeed: 500,
+                //捲動行數 (顯示幾行文字)
+                scrollNum: 3,
+                //暫停
+                pause: 500,
+            })
+        });
+    </script>
+
+</body>
+
+</html>
